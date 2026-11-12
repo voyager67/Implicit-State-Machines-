@@ -1,10 +1,10 @@
 # Sample audit (fictional example)
 
-> Illustrative data for learning the report format. This is not evidence about a real repository.
+> This is illustrative data for learning the report format. It is not evidence about any real repository.
 
 ## Executive readout
 
-A fictional account settings page has one high-priority implicit lifecycle: profile saving. Three related booleans and a nullable error can represent contradictory UI states. The smallest proposed change is a typed save status with request identity, while keeping the existing `onSaved` prop unchanged.
+The fictional account settings page has one high-priority implicit lifecycle: profile saving. Three related booleans and a nullable error value can represent contradictory UI states. The smallest proposed change is a typed save status with request identity, while keeping the existing `onSave` prop unchanged.
 
 ## Inventory
 
@@ -29,7 +29,7 @@ stateDiagram-v2
 
 - **Severity:** High
 - **Confidence:** High
-- **Evidence:** fictional `ProfileEditor.tsx` writes `isSaving`, `hasSaved`, and `saveError` in the same submit handler.
+- **Evidence:** `ProfileEditor.tsx` writes `isSaving`, `hasSaved`, and `saveError` in the same submit handler.
 - **Failure mode:** a previous error can remain visible after a successful retry.
 - **UX:** conflicting save feedback.
 - **DX:** lifecycle behavior is spread across three setters.
@@ -38,7 +38,7 @@ stateDiagram-v2
 
 ## Decision
 
-Add tests for initial save, success, failure, retry, and stale responses. If they confirm the inferred contract, replace the related flags with a discriminated union, retain the public `onSaved` contract, and derive any legacy read-only flags during migration.
+Add tests for initial save, success, failure, retry, and stale responses. If they confirm the inferred contract, replace the related flags with a discriminated union, keep the public `onSave` contract unchanged, and derive any legacy read-only flags during migration.
 
 ## Verification
 

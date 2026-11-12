@@ -23,7 +23,7 @@ Vibecoders, open your messiest project. Look for the `isLoading`, `isSuccess`, `
 
 > **“Find all of the implicit state machines in my app. Make the best decision that elevates user experience (UX), developer experience (DX), and agent experience (AX), without breaking anything.”**
 
-A one-line prompt can produce a one-shot answer. This repository turns the idea into a repeatable workflow: two portable `SKILL.md` agent skills, detection references, a safer before/after example, review checklists, and a consistent report format.
+A one-line prompt can produce a one-shot answer. This repository turns the idea into a repeatable workflow: two portable `SKILL.md` agents skills, detection references, a safer before/after example, review checklists, and a consistent report format.
 
 ## The problem: boolean soup
 

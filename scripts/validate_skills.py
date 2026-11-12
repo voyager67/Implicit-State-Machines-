@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dependency-free structural validation for the Agent Skills repository."""
+"""Dependency-free structural validation for this Agent Skills repository."""
 from __future__ import annotations
 
 import re
@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-LINK_RE = re.compile(r"!?[[][^]]*[]][(]([^)]+)[)]")
+LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 EXPECTED_SKILLS = {"implicit-state-machines", "vibe-refactor-protocol"}
 
 
