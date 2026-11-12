@@ -23,7 +23,7 @@ Vibecoders, open your messiest project. Look for the `isLoading`, `isSuccess`, `
 
 > **“Find all of the implicit state machines in my app. Make the best decision that elevates user experience (UX), developer experience (DX), and agent experience (AX), without breaking anything.”**
 
-A one-line prompt can produce a one-shot answer. This repository turns the idea into a repeatable workflow: two portable `SKILL.md` agents skills, detection references, a safer before/after example, review checklists, and a consistent report format.
+This repository turns that idea into a repeatable workflow: two portable `SKILL.md` skills, detection references, a before/after example, review checklists, and a consistent report format.
 
 ## The problem: boolean soup
 
@@ -36,7 +36,7 @@ const [user, setUser] = useState<User | null>(null);
 
 Four independent values allow up to 16 combinations. A real workflow may need only a few. Which combinations are valid? What happens when an old request finishes after a retry? Does a reducer prevent the network request, or only ignore its event after the request has already started?
 
-The skill makes these questions explicit before recommending a change.
+The skills make these questions explicit before recommending a change.
 
 ## The skills
 
@@ -44,7 +44,7 @@ The skill makes these questions explicit before recommending a change.
 
 **Repository-wide audit**
 
-The deeper discovery and architecture workflow. It systematically hunts, ranks, and models hidden state machines across frontend, backend, mobile, data, and agent/tool lifecycles.
+A discovery and architecture workflow that hunts, ranks, and models hidden state machines across frontend, backend, mobile, data, and agent/tool lifecycles.
 
 - Detect boolean clusters, scattered status strings, nullable state, refs-as-flags, timers, retry loops, and multi-step workflows.
 - Record states, events, transitions, guards, effects, invariants, ownership, and lifetime.
@@ -58,7 +58,7 @@ The deeper discovery and architecture workflow. It systematically hunts, ranks, 
 
 **Code-first refactor**
 
-The direct execution workflow based on the prompt you provided. Use it when you want an AI coding agent to diagnose a supplied snippet or feature and produce a focused refactor.
+A focused workflow for diagnosing a supplied snippet, component, feature, or repository and producing a safe refactor.
 
 Its required response is:
 
@@ -81,7 +81,7 @@ type State =
   | { status: "ready"; user: User };
 ```
 
-Full example, including stale-response handling and integration caveats: [`before-after.md`](skills/implicit-state-machines/examples/before-after.md).
+Full example, including stale-response handling and integration caveats: [`skills/implicit-state-machines/examples/before-after.md`](skills/implicit-state-machines/examples/before-after.md).
 
 ## The Three-Lens Gate
 
@@ -95,7 +95,7 @@ AX means **agent experience** in this project. Accessibility remains part of UX 
 
 ## The “preserve what works” contract
 
-The last part of the prompt is the hard part. These skills therefore require:
+The preservation requirement is the hard part. These skills therefore require:
 
 - Discovery, ranking, and modeling before editing.
 - Characterization tests for consequential existing behavior.
@@ -107,15 +107,15 @@ The last part of the prompt is the hard part. These skills therefore require:
 
 ## Install
 
-### With a skills installer
+### With the Agent Skills CLI
 
-Where your AI tool supports the skills CLI:
+Install this repository with the open skills CLI:
 
 ```bash
-npx skills add YOUR_GITHUB_USERNAME/implicit-state-machines
+npx skills add voyager67/Implicit-State-Machines-
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with the GitHub owner. Check the installer documentation for its current supported agents and flags.
+Choose one or both skills and the target coding agent when prompted. The CLI requires Node.js 22.20 or later. Private repositories also require working GitHub authentication.
 
 ### Manual installation
 
@@ -155,22 +155,18 @@ The checkout sometimes submits twice and occasionally shows an old error after r
 Trace the lifecycle, identify the race or impossible state, and fix only the confirmed cause.
 ```
 
-You can also copy the standalone prompt from [`prompts/vibe-refactor-protocol.md`](prompts/vibe-refactor-protocol.md).
-
 ## Repository layout
 
 ```text
 implicit-state-machines/
 ├── README.md
 ├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
 ├── assets/
 │   └── implicit-state-machines-banner.svg
 ├── docs/
-│   ├── audit-checklist.md
-│   ├── installation.md
-│   └── report-template.md
-├── prompts/
-│   └── vibe-refactor-protocol.md
+│   └── installation.md
 ├── scripts/
 │   └── validate_skills.py
 ├── skills/
@@ -196,17 +192,13 @@ implicit-state-machines/
 - **Evidence first:** findings cite files and symbols; suspicions are labelled as such.
 - **Small diffs:** preserve existing contracts and avoid broad rewrites.
 
-The format is intended for agents that support the Agent Skills-style `SKILL.md` convention. A shared file format does not mean every AI tool auto-discovers skills in the same location or implements every capability identically.
+The format follows the Agent Skills-style `SKILL.md` convention. A shared file format does not mean every AI tool auto-discovers skills in the same location or implements every capability identically.
 
 ## Contributing
 
 Useful contributions include new detection signals, tested examples for additional stacks, edge cases involving asynchronous work, and improvements to the audit/report templates. Keep examples self-contained and label fictional data clearly.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## Credits and attribution
-
-This repository is an independent implementation inspired by the widely shared prompt about finding implicit state machines and improving UX, DX, and AX without breaking behavior. The original prompt's author should be credited by anyone who republishes the prompt itself; this repository's skills, workflows, documentation, and examples are maintained as an MIT-licensed project.
 
 ## License
 

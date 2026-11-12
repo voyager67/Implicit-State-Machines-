@@ -1,9 +1,8 @@
 ---
 name: vibe-refactor-protocol
-description: Diagnose boolean soup, tangled conditionals and hidden async lifecycles, then refactor the highest-value case into explicit, testable states while preserving existing interfaces and improving UX, DX and agent experience.
+description: Diagnose boolean soup, tangled conditionals, and hidden async lifecycles, then refactor the highest-impact case into explicit states. Use when improving a component, feature, or codebase while preserving existing interfaces and raising UX, DX, and agent experience.
 license: MIT
 metadata:
-  author: Harsh Singh
   version: "1.0.0"
   tags: "vibe-refactor protocol state-machines refactoring ux dx ax"
 ---

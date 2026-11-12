@@ -1,16 +1,18 @@
 # Installation
 
-This repository uses the open Agent Skills-style convention: each skill is a directory containing a `SKILL.md` file with YAML frontmatter and Markdown instructions.
+This repository follows the open Agent Skills format. Each skill is a self-contained directory with a `SKILL.md` file, YAML frontmatter, and Markdown instructions.
 
-## Install with a skills installer
+## Install with the Agent Skills CLI
 
-Where your agent supports the skills CLI, install the repository with:
+Requires Node.js 22.20 or later. From your project, run:
 
 ```bash
-npx skills add YOUR_GITHUB_USERNAME/implicit-state-machines
+npx skills add voyager67/Implicit-State-Machines-
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with the repository owner. Check the installer's current agent list and flags; installer support changes independently of this repository.
+Choose `implicit-state-machines`, `vibe-refactor-protocol`, or both when prompted, then select the coding agent(s) to install to.
+
+For a private checkout, configure GitHub authentication before running the command. Public access is not required for members who already have repository access.
 
 ## Manual installation
 
@@ -24,6 +26,6 @@ Common project-local conventions include `.agents/skills/`, `.claude/skills/`, `
 ## Which skill should I use?
 
 - **implicit-state-machines:** repository-wide discovery, inventory, ranking, transition modeling, and safe improvement decisions.
-- **vibe-refactor-protocol:** code-first diagnosis and focused refactoring with the requested Diagnosis → Refactored Code → UX/DX/AX output.
+- **vibe-refactor-protocol:** code-first diagnosis and focused refactoring with the Diagnosis → Refactored Code → UX/DX/AX output.
 
 Both skills are self-contained. They do not require XState or another runtime dependency.

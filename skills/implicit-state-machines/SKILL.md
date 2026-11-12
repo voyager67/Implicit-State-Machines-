@@ -1,9 +1,8 @@
 ---
 name: implicit-state-machines
-description: Discover hidden application lifecycles in boolean flags, status strings, async flows, timers and scattered conditionals; model safe transitions and improve UX, DX and agent experience without unnecessary rewrites.
+description: Audit a codebase for hidden state machines in boolean clusters, status strings, nullable state, async flows, timers and scattered conditionals. Use when reviewing an application for impossible states, unclear transitions, concurrency risks, or safe UX/DX/agent-experience improvements.
 license: MIT
 metadata:
-  author: Harsh Singh
   version: "1.1.0"
   tags: "state-machines refactoring ux dx ax vibecoding code-quality"
 ---
